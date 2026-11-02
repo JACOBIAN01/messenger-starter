@@ -8,7 +8,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const ME = "Newton";
 const SERVER_URL = "https://messenger-yzgf.onrender.com";
@@ -29,6 +29,7 @@ export default function App() {
   }, []);
 
   return (
+    <SafeAreaProvider>
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Scaler</Text>
@@ -60,6 +61,7 @@ export default function App() {
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
